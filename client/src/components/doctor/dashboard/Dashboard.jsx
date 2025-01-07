@@ -82,6 +82,7 @@ const Dashboard = () => {
 
 
   const fetchPatients = async () => {
+    console.log(doctor)
     if (doctor?.patients?.length > 0) {
       try {
         const patientDetails = await Promise.all(
