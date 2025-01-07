@@ -119,6 +119,8 @@ const Dashboard = () => {
         body: JSON.stringify({ status: newStatus }),
       });
 
+      console.log(patientId);
+
       const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
         method:'PUT',
         headers:{'Content-Type':'application/json'},
