@@ -1,0 +1,64 @@
+.landing-page {
+    background: linear-gradient(to right, #e0f7fa, #fce4ec);
+    /* Soft gradient background */
+    min-height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+header {
+    background-color: #007bff;
+    /* Primary blue for header */
+    color: white;
+    padding: 20px;
+    /* position: relative;
+    margin-top: 0px; */
+    border-radius: 10px;
+}
+
+.hero-section {
+    background-color: #e7f0ff;
+    /* Light soft blue for hero section */
+    color: #333;
+    /* Dark text for contrast */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+}
+
+.cards-container .card {
+
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cards-container .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.patient-card img,
+.hospital-card img,
+.doctor-card img {
+    height: 120px;
+    /* Adjust based on your image size */
+}
+
+.card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent white */
+}
+
+footer {
+    background-color: #343a40;
+    /* Dark footer for contrast */
+    color: white;
+    padding: 20px;
+}

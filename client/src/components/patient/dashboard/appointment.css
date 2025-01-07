@@ -1,0 +1,45 @@
+.App {
+    /* max-width: 400px; */
+    margin: 0 auto;
+    /* padding: 20px; */
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin: 3%;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}

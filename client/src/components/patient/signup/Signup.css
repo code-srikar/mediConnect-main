@@ -1,0 +1,88 @@
+.signup-page {
+    background: linear-gradient(to right, #e0f7fa, #fce4ec); /* Soft gradient background */
+    min-height: 100vh; /* Full height of the viewport */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Align items at the top */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 10px 20px;
+    width: 100%; /* Ensure navbar takes full width */
+}
+
+.navbar h3 {
+    margin-left: 20px;
+}
+
+.navbar-content button {
+    padding: 8px 15px;
+    background-color: white; /* Light button for contrast */
+    color: #007bff; /* Text color matching navbar */
+    border: none;
+    border-radius: 5px;
+}
+
+.signup-container {
+    max-width: 400px; /* Limit width for better readability */
+    width: 100%; /* Allow full width on smaller screens */
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.9); Slightly transparent white */
+    border-radius: 10px;
+    margin-top: 00px; /* Space below the navbar */
+}
+
+.signup-form h3 {
+    text-align: center;
+}
+
+.signup-form label {
+    margin-top: 10px;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%; /* Full width of the container */
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Primary blue for button */
+    color: white; /* White text for contrast */
+    border-radius: 5px;
+}
+
+.signup-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.signup-form button[disabled] {
+    background-color: #a1c6ea; /* Light blue when loading */
+}
+
+.custom-toast {
+   background-color:#343a40 !important; /* Custom toast background */
+   color:white !important; /* Custom toast text color */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+   .signup-container {
+       width: calc(100% - 40px); /* Full width minus padding for smaller screens */
+       margin-top: 80px; /* Adjust margin for smaller screens if needed */
+   }
+
+   .navbar h3,
+   .navbar-content button {
+       font-size: smaller; /* Adjust font size for smaller screens */
+   }
+}
