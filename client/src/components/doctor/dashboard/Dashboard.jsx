@@ -125,6 +125,8 @@ const Dashboard = () => {
         body:JSON.stringify({doctors:[doctor._id]})
       })
 
+      console.log(patient)
+
       if (response.ok && patient.ok) {
         setAppointments(prev =>
           prev.map(apt =>
