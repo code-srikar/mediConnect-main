@@ -121,15 +121,16 @@ const Dashboard = () => {
 
       console.log(patientId);
 
-      const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
-        method:'PUT',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({doctors:[doctor._id]})
-      })
+      
 
       console.log(patient)
 
-      if (response.ok && patient.ok) {
+      if (response.ok) {
+        const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
+          method:'PUT',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({doctors:[doctor._id]})
+        })
         setAppointments(prev =>
           prev.map(apt =>
             apt._id === appointmentId ? { ...apt, status: newStatus } : apt
