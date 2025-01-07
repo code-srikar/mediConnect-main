@@ -113,30 +113,30 @@ const Dashboard = () => {
 
   const updateAppointmentStatus = async (appointmentId, newStatus,patientId) => {
     try {
-      const response = await fetch(`https://mediconnect-but5.onrender.com/api/appointment/${appointmentId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status: newStatus }),
-      });
+      // const response = await fetch(`https://mediconnect-but5.onrender.com/api/appointment/${appointmentId}`, {
+      //   method: 'PUT',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ status: newStatus }),
+      // });
 
-      console.log(patientId);
-
+      // console.log(patientId);
+      const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({doctors:[doctor._id]})
+      })
       
 
-      console.log(patient)
+      // console.log(patient)
 
-      if (response.ok) {
-        const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
-          method:'PUT',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({doctors:[doctor._id]})
-        })
-        setAppointments(prev =>
-          prev.map(apt =>
-            apt._id === appointmentId ? { ...apt, status: newStatus } : apt
-          )
-        );
-      }
+      // if (response.ok) {
+        
+      //   setAppointments(prev =>
+      //     prev.map(apt =>
+      //       apt._id === appointmentId ? { ...apt, status: newStatus } : apt
+      //     )
+      //   );
+      // }
     } catch (error) {
       console.error('Error updating appointment:', error);
     }
