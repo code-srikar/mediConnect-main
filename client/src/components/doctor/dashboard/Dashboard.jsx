@@ -111,7 +111,7 @@ const Dashboard = () => {
     }
   };
 
-  const updateAppointmentStatus = async (appointmentId, newStatus) => {
+  const updateAppointmentStatus = async (appointmentId, newStatus,patientId) => {
     try {
       const response = await fetch(`https://mediconnect-but5.onrender.com/api/appointment/${appointmentId}`, {
         method: 'PUT',
@@ -119,7 +119,13 @@ const Dashboard = () => {
         body: JSON.stringify({ status: newStatus }),
       });
 
-      if (response.ok) {
+      const patient = await fetch(`https://mediconnect-but5.onrender.com/api/patient/profile/${patientId}`,{
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({doctors:[doctor._id]})
+      })
+
+      if (response.ok && patient.ok) {
         setAppointments(prev =>
           prev.map(apt =>
             apt._id === appointmentId ? { ...apt, status: newStatus } : apt
@@ -303,7 +309,7 @@ const Dashboard = () => {
                     {appointment.status !== 'Completed' && appointment.status !== 'Cancelled' && (
                       <div className="space-x-2">
                         <button
-                          onClick={() => updateAppointmentStatus(appointment._id, 'Completed')}
+                          onClick={() => updateAppointmentStatus(appointment._id, 'Completed',appointment.patientId)}
                           className="px-3 py-1 text-sm bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
                         >
                           Complete
